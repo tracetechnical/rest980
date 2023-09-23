@@ -56,6 +56,7 @@ router.get('/local/action/start', map2dorita('local', 'start'));
 router.get('/local/action/stop', map2dorita('local', 'stop'));
 router.get('/local/action/pause', map2dorita('local', 'pause'));
 router.get('/local/action/dock', map2dorita('local', 'dock'));
+router.get('/local/action/evac', map2dorita('local', 'evac'));
 router.get('/local/action/resume', map2dorita('local', 'resume'));
 
 router.post('/local/action/cleanRoom', map2dorita('local', 'cleanRoom', true));
@@ -106,6 +107,7 @@ router.get('/cloud/info/history', map2dorita('cloud', 'accumulatedHistorical'));
 router.get('/cloud/info/missionHistory', map2dorita('cloud', 'missionHistory'));
 
 router.get('/cloud/action/clean', map2dorita('cloud', 'clean'));
+router.get('/cloud/action/evac', map2dorita('cloud', 'evac'));
 router.get('/cloud/action/quick', map2dorita('cloud', 'quick'));
 router.get('/cloud/action/spot', map2dorita('cloud', 'spot'));
 router.get('/cloud/action/dock', map2dorita('cloud', 'dock'));
