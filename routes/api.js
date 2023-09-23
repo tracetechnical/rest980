@@ -126,6 +126,8 @@ router.get('/cloud/action/fbeep', map2dorita('cloud', 'fbeep'));
 // helper:
 
 function map2dorita (source, method, hasArgs) {
+  console.log("SEND");
+  console.log(method);
   return function (req, res, next) {
     if (firmwareVersion === 2 && source === 'cloud') {
       // temporal
@@ -150,6 +152,9 @@ function map2dorita (source, method, hasArgs) {
     if (keepAlive === 'no' && firmwareVersion === 2) {
       return sendAndDisconnect(method, hasArgs ? req.body : undefined, res, next);
     }
+      
+    console.log("SEND2");
+    console.log(method);
     myRobot[source][method](hasArgs ? req.body : undefined).then(function (resp) {
       res.send(resp);
     }).catch(next);
@@ -157,6 +162,9 @@ function map2dorita (source, method, hasArgs) {
 }
 
 function sendAndDisconnect (method, args, res, next) {
+  
+  console.log("SEND3");
+  console.log(method);
   let client = new dorita980.Local(blid, password, knownIP, 2);
   client.on('connect', function () {
     client[method](args).then(function (resp) {
