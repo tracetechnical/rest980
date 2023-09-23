@@ -167,7 +167,10 @@ function sendAndDisconnect (method, args, res, next) {
   console.log(method);
   let client = new dorita980.Local(blid, password, knownIP, 2);
   client.on('connect', function () {
+    console.log("CONN");
     client[method](args).then(function (resp) {
+      console.log("DONE");
+      console.log(resp);
       res.send(resp);
       client.end();
     }).catch(next);
