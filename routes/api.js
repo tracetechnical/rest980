@@ -173,7 +173,8 @@ function sendAndDisconnect (method, args, res, next) {
       console.log(resp);
       res.send(resp);
       client.end();
-    }).catch(next);
+    }).catch((e) => {
+      console.error(e)});
   });
 }
 
