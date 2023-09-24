@@ -1,5 +1,5 @@
 # Use latest node
-FROM node:boron
+FROM node:latest
 
 MAINTAINER koalazak <zak.tux@gmail.com>
 
